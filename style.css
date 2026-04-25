@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #a066ff, #d9a7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  text-align: center;
+}
+
+/* Input */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background: #ff4b87;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* BOOK */
+.book {
+  width: 350px;
+  height: 350px;
+  margin-top: 30px;
+  position: relative;
+  perspective: 1500px;
+  display: none;
+}
+
+/* PAGE */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 15px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 1s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* IMAGES */
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FRONT */
+.front {
+  transform-origin: left;
+  z-index: 2;
+}
+
+/* INSIDE */
+.inside {
+  transform: rotateY(180deg);
+}
+
+/* OPEN EFFECT */
+.book.open .front {
+  transform: rotateY(-180deg);
+}
+
+.book.open .inside {
+  transform: rotateY(0);
+}
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* IMAGE */
+.card-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT ON BOARD */
+#message {
+  position: absolute;
+  top: 70%;              /* 🔥 adjust this */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+ #message {
+  line-height: 1.4;
+  font-size: 22px;
+}
+}
+/* BALLOON BACKGROUND */
+.balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.balloons span {
+  position: absolute;
+  bottom: -100px;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: floatUp 8s linear infinite;
+  opacity: 0.8;
+}
+
+/* CREATE HEART USING BEFORE & AFTER */
+.balloons span::before,
+.balloons span::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+/* LEFT CIRCLE */
+.balloons span::before {
+  top: -10px;
+  left: 0;
+}
+
+/* RIGHT CIRCLE */
+.balloons span::after {
+  left: -10px;
+  top: 0;
+}
+/* HEART COLORS */
+.balloons span:nth-child(3n) {
+  background: #ffd6e8; /* light pink */
+}
+
+.balloons span:nth-child(3n+1) {
+  background: #fff5ba; /* light yellow */
+}
+
+.balloons span:nth-child(3n+2) {
+  background: #ffffff; /* white */
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}

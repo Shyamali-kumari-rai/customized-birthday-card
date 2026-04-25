@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Book Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="balloons"></div>
+<div class="container">
+  <h1>🎂 Birthday Card</h1>
+
+  <input type="text" id="nameInput" placeholder="Enter Name">
+  <button onclick="generateCard()">Create Card</button>
+
+  <!-- BOOK -->
+  <div class="book" id="book">
+    
+    <!-- FRONT -->
+    <div class="page front">
+      <img src="assets/card.png" alt="Front Card">
+    </div>
+
+    <div class="page inside">
+  <div class="card-wrapper">
+    <img src="assets/cute3.png" alt="Inside Card">
+    <h2 id="message"></h2>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
