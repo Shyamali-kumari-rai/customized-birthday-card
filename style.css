@@ -95,7 +95,7 @@ button {
 /* TEXT ON BOARD */
 #message {
   position: absolute;
-  top: 70%;              /* 🔥 adjust this */
+  top: 70%;              /*  adjust this */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
